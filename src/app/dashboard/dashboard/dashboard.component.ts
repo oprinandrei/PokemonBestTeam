@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { PkmApiService } from '../../shared/services/pkm-api.service';
 
 @Component({
   selector: 'pbt-dashboard',
@@ -8,10 +7,8 @@ import { PkmApiService } from '../../shared/services/pkm-api.service';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private pkm: PkmApiService) { }
+  constructor() { }
 
-  ngOnInit(): void {
-    this.pkm.getPokemon('ditto').subscribe(val => console.log(val))
-  }
+  ngOnInit(): void {}
 
 }
