@@ -1,2 +1,37 @@
-Main app:
-<router-outlet></router-outlet>
+<mat-drawer-container class="app-container" autosize>
+  <mat-drawer #drawer class="sidenav" mode="side">
+    <!-- <p>Auto-resizing sidenav</p>
+    <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+    <button (click)="showFiller = !showFiller" mat-raised-button>
+      Toggle extra text
+    </button> -->
+
+    <ul>
+      <li>
+        <a routerLink="/">Dashboard</a>
+      </li>
+      <li>
+        <a routerLink="/team">Team</a>
+      </li>
+    </ul>
+  </mat-drawer>
+
+  <mat-toolbar>
+    <button mat-icon-button class="example-icon" aria-label="Toogle side menu" (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Dashboard</span>
+    <!-- <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button> -->
+  </mat-toolbar>
+
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+
+</mat-drawer-container>
