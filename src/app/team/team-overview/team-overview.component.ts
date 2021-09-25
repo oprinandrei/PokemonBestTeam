@@ -4,10 +4,8 @@ import { Observable } from 'rxjs';
 import { map, startWith, tap } from 'rxjs/operators';
 
 import { PokemonList } from 'src/assets/pokemon-list';
+import { Pokemon } from 'src/app/shared/interfaces/pokemon.interface';
 
-export interface Pokemon {
-  name: string;
-}
 @Component({
   selector: 'pbt-team-overview',
   templateUrl: './team-overview.component.html',

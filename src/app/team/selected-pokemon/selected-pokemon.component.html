@@ -1,0 +1,16 @@
+<div class="selectedPokemonWidget">
+  <h1>Selected pokemon: {{pokemonData ? pokemonData.name : '-'}}</h1>
+  <div class="container" *ngIf="pokemonData">
+    <img src="{{pokemonData.sprites.front_default}}">
+    <div>
+      Base stats:
+      <ul>
+        <li *ngFor="let stats of pokemonData.stats">
+          {{stats.stat.name}} : {{stats.base_stat}}
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+</div>
