@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { TeamOverviewComponent } from './team-overview/team-overview.component';
 
@@ -8,6 +9,7 @@ import { TeamRoutingModule } from './team-routing.module';
 import { PkmApiService } from '../shared/services/pkm-api.service';
 
 import { MatInputModule } from '@angular/material/input';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,10 @@ import { MatInputModule } from '@angular/material/input';
   imports: [
     CommonModule,
     TeamRoutingModule,
-    MatInputModule
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatAutocompleteModule
   ],
   providers: [PkmApiService]
 })
