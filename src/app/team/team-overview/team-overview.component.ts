@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { map, startWith } from 'rxjs/operators';
+import { map, startWith, tap } from 'rxjs/operators';
 
 import { PokemonList } from 'src/assets/pokemon-list';
 
@@ -19,12 +19,13 @@ export class TeamOverviewComponent implements OnInit {
 
   myControl = new FormControl();
   options: Pokemon[] = [];
+  selectedPokemon: Pokemon = { name: '' };
+  selectedPokemons: Pokemon[] = [];
   // Definite Assignment Assertions - view typescript 2.7 release notes
   filteredOptions!: Observable<Pokemon[]>;
 
   ngOnInit() {
     PokemonList.forEach(pokemon => {
-      console.log(pokemon.name.english)
       const { english: name } = pokemon.name;
       this.options.push({ name });
     })
@@ -36,6 +37,17 @@ export class TeamOverviewComponent implements OnInit {
         map(value => typeof value === 'string' ? value : value.name),
         map(name => name ? this._filter(name) : this.options.slice())
       );
+  }
+
+  /* 
+    React to mat-autocomplete optionSelected @Output
+    Add selected pokemon to list of pokemons
+  */
+  onSelectedPokemon(event: any) {
+    if (event) {
+      this.selectedPokemon = event.option.value;
+      this.selectedPokemons.push(event.option.value)
+    }
   }
 
   /* 
