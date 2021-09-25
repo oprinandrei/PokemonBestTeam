@@ -7,13 +7,16 @@ import { TeamRoutingModule } from './team-routing.module';
 
 import { PkmApiService } from '../shared/services/pkm-api.service';
 
+import { MatInputModule } from '@angular/material/input';
+
 @NgModule({
   declarations: [
     TeamOverviewComponent
   ],
   imports: [
     CommonModule,
-    TeamRoutingModule
+    TeamRoutingModule,
+    MatInputModule
   ],
   providers: [PkmApiService]
 })
