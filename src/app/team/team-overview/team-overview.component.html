@@ -13,12 +13,7 @@
 
   <div>
     <pbt-selected-pokemon [selectedPokemon]="selectedPokemon"></pbt-selected-pokemon>
-    <h2>Selected pokemon list:</h2>
-    <ul>
-      <li *ngFor="let pokemon of selectedPokemons">
-        {{ pokemon.name }}
-      </li>
-    </ul>
+    <pbt-team-list [selectedPokemons]="selectedPokemons"></pbt-team-list>
   </div>
 
 </div>

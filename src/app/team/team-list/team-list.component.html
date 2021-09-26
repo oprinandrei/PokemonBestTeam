@@ -1,0 +1,10 @@
+<h2>Selected pokemon list:</h2>
+<ul>
+  <li *ngFor="let pokemon of selectedPokemons; let i = index ">
+    <span>{{ pokemon.name }}</span>
+    <button mat-icon-button class="example-icon" aria-label="Remove pokemon from selected list"
+      (click)="removePokemonFromList(i)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </li>
+</ul>

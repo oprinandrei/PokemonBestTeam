@@ -12,11 +12,14 @@ import { PkmApiService } from '../shared/services/pkm-api.service';
 
 import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatIconModule } from '@angular/material/icon';
+import { TeamListComponent } from './team-list/team-list.component';
 
 @NgModule({
   declarations: [
     TeamOverviewComponent,
-    SelectedPokemonComponent
+    SelectedPokemonComponent,
+    TeamListComponent
   ],
   imports: [
     CommonModule,
@@ -25,7 +28,8 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     ReactiveFormsModule,
     HttpClientModule,
     MatInputModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatIconModule
   ],
   providers: [PkmApiService]
 })
